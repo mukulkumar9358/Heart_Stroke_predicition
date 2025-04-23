@@ -13,8 +13,12 @@ from sklearn.preprocessing import OneHotEncoder
 from xgboost import XGBClassifier
 warnings.filterwarnings('ignore')
 
+import joblib
+joblib.dump(model, "model.pkl")
+
+
 df = pd.read_csv('heart.csv')
-clf = XGBClassifier()
+clf = XGBClassifier()py
 
 # selected features
 selected_features= ['Age', 'Sex', 'ChestPainType', 'FastingBS', 'ExerciseAngina', 'Oldpeak', 'ST_Slope']
